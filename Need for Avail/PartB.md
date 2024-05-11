@@ -1,4 +1,4 @@
-Part B: Avail Node Providers and RPC Endpoints
+<h1>Part B: Avail Node Providers and RPC Endpoints<h2>
 Node Providers:
 Currently, Avail is in its testnet phase, and there are no dedicated node providers like Infura or Alchemy available yet. However, you can run your own node using the instructions provided in Avail's documentation: https://docs.availproject.org/
 
