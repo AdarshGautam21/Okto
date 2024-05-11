@@ -1,8 +1,13 @@
 <h1>Part B: Avail Node Providers and RPC Endpoints</h1>
+<<<<<<< HEAD
 Node Providers:
+=======
+<h2>
+Node Providers:</h2>h2>
+>>>>>>> 2430cea7f36ded278aaae8910a01ee9530e33ee5
 Currently, Avail is in its testnet phase, and there are no dedicated node providers like Infura or Alchemy available yet. However, you can run your own node using the instructions provided in Avail's documentation: https://docs.availproject.org/
 
-Public RPC and WS Endpoints:
+<h2>Public RPC and WS Endpoints:</h2>
 Avail's testnet RPC endpoint is: wss://ws.testnet.avail.network
 
 Goldberg Testnet: 
@@ -24,5 +29,5 @@ Bware:
 
 Avail does not currently provide a public HTTP RPC endpoint. You can access the network using the WebSocket endpoint or by running your own node.
 
-RPC Method Documentation:
+<h2>RPC Method Documentation:</h2>
 Avail's JSON-RPC interface is compatible with Ethereum's JSON-RPC, so you can refer to the Ethereum JSON-RPC documentation for available methods: https://eth.wiki/json-rpc/API
