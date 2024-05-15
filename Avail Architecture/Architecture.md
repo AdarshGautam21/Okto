@@ -1,4 +1,4 @@
-Challenge 2: Avail Architecture
+<h2>Challenge 2: Avail Architecture</h2>
 What is the Structure of the Blockchain?
 Avail, as a Layer 2 (L2) blockchain on Ethereum, has a unique architecture designed to complement the Ethereum network's capabilities. While it operates as a separate chain, it leverages the security and consensus of Ethereum for certain aspects.
 Block Structure:
