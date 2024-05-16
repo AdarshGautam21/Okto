@@ -1,0 +1,43 @@
+require('dotenv').config();
+const AvailSDK = require('avail-sdk'); // replace with actual SDK
+
+const WALLET_ADDRESS = process.env.WALLET_ADDRESS;
+const TOKEN_ADDRESS = process.env.TOKEN_ADDRESS;
+
+const provider = new AvailSDK.Provider(); // replace with actual method to create a provider
+
+async function getAccountDetails() {
+    // Get the account balance for the native token
+    const nativeBalance = await provider.getBalance(WALLET_ADDRESS);
+    console.log(`Native Token Balance: ${nativeBalance}`);
+
+    // List all of the user's fungible token assets and their balance
+    const assets = await provider.listAssets(WALLET_ADDRESS);
+    assets.forEach(asset => {
+        console.log(`Asset: ${asset.name}, Balance: ${asset.balance}`);
+    });
+
+    // Get the account balance for the non-native token
+    const nonNativeBalance = await provider.getBalance(WALLET_ADDRESS, TOKEN_ADDRESS);
+    console.log(`Non-Native Token Balance: ${nonNativeBalance}`);
+
+    // Get the account details
+    const accountDetails = await provider.getAccount(WALLET_ADDRESS);
+    console.log(`Account Details: ${JSON.stringify(accountDetails)}`);
+
+    // Fetch the sequence number or nonce for that account
+    const nonce = await provider.getTransactionCount(WALLET_ADDRESS);
+    console.log(`Nonce: ${nonce}`);
+
+    // Fetch chain information
+    const chainId = await provider.getChainId();
+    console.log(`Chain ID: ${chainId}`);
+}
+
+getAccountDetails().catch(console.error);
+
+
+
+//DOCS Used: Avail working with projects link: https://docs.availproject.org/?ref=blog.availproject.org
+//Avail working with blockchain projects: https://docs.availproject.org/docs/introduction-to-avail
+//Avail docs for development: https://docs.availproject.org/
