@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@availproject/cli": "^0.1.12",
+    "avail-js-sdk": "^0.2.12"
+  }
+}
