@@ -10,11 +10,11 @@ async function fetchAccountDetails(address) {
 
   // 2. List Fungible Token Assets and Balances
 
-  const assets = await api.query.assets.account.entries(address);
-  const fungibleAssets = assets.map(([key, value]) => ({
-    assetId: key.args[1].toNumber(),
-    balance: value.toJSON()
-  }));
+//   const assets = await api.query.assets.account.entries(address);
+//   const fungibleAssets = assets.map(([key, value]) => ({
+//     assetId: key.args[1].toNumber(),
+//     balance: value.toJSON()
+//   }));
 
 
   // 4. Get Account Details
