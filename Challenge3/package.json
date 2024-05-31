@@ -9,6 +9,8 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "avail-js-sdk": "^0.2.12"
+    "avail-js": "^0.1.0",
+    "avail-js-sdk": "^0.2.12",
+    "dotenv": "^16.4.5"
   }
 }

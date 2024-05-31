@@ -1,4 +1,3 @@
-```markdown
 ## Challenge 2: Avail Architecture
 
 ### What is the structure of the blockchain?
@@ -18,6 +17,7 @@ Avail utilizes Ethereum's consensus mechanism for security. This means that Avai
 
 ### Reward Mechanism for Validators:
 The specifics of Avail's reward mechanism are still under development. However, it's expected that validators will be incentivized to maintain the network by earning rewards for their participation in data availability sampling and block production.
+![alt text](image-2.png)
 
 ### Known Attacks on Avail:
 **Data Withholding Attacks:** A potential attack vector on Avail is data withholding, where a node intentionally refuses to share data. However, Avail's data availability sampling protocol is designed to mitigate this risk by requiring nodes to prove the availability of data through random sampling.
@@ -29,6 +29,7 @@ Avail's design aims to minimize the possibility of chain reorganizations (reorgs
 
 ### Avail VM Design and Architecture
 Avail does not have its own virtual machine (VM). Instead, it is compatible with the Ethereum Virtual Machine (EVM), meaning that Ethereum smart contracts can be deployed and executed on Avail without significant modifications.
+![alt text](image-1.png)
 
 ### Gas or Transaction Fee on Avail
 Avail utilizes a concept similar to gas fees on Ethereum to compensate validators for their work in providing data availability. The exact calculation of gas fees and the native token used for payment are still being determined as Avail is in active development.
@@ -48,4 +49,5 @@ Avail likely implements mechanisms to prevent replay attacks, such as sequence n
 3. **Block Inclusion:** The transaction is included in a block on the Avail chain.
 4. **Ethereum Verification:** The data availability proofs for the block are submitted to Ethereum for verification.
 5. **Transaction Finality:** Once the data availability proofs are verified on Ethereum, the transaction is considered final on Avail.
-```
+![alt text](image.png)
+

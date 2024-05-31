@@ -1,0 +1,11 @@
+# Node.js
+node_modules
+.env
+
+# Next.js
+.next
+out
+
+# Hardhat
+artifacts
+cache

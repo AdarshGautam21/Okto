@@ -1,6 +1,6 @@
 const ethUtil = require('ethereumjs-util');
 const ethTx = require('ethereumjs-tx');
-const Avail = require('avail-sdk');
+const Avail = require('avail-js-sdk');
 
 // Create Avail instance
 const avail = new Avail({
