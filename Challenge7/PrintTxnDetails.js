@@ -1,35 +1,27 @@
-const { ApiPromise, WsProvider } = require('avail-js-sdk');
+const { HttpProvider, ApiPromise } = require('avail-js-sdk');
+require('dotenv').config();
 
-async function main() {
-  const wsProvider = new WsProvider("wss://ws.turing.avail.tools");
-  const api = await ApiPromise.create({ provider: wsProvider, chainId: 22023 });
-
-  const txHash = 'YOUR_TRANSACTION_HASH'; // Replace with the actual transaction hash
-
+async function fetchTransactionDetails(txHash) {
   try {
-    // 1. Fetch Transaction Details
-    const extrinsic = await api.rpc.chain.getExtrinsic(txHash);
+    const httpProvider = new HttpProvider(process.env.HTTP_ENDPOINT);
+    const api = await ApiPromise.create({ provider: httpProvider });
 
-    // 2. Print Transaction Details
-    console.log('\nTransaction Details:');
-    console.log('Hash:', txHash);
-    console.log('Block Hash:', extrinsic.blockHash.toHex());
-    console.log('Is Signed:', extrinsic.isSigned);
+    // Fetch events related to the transaction hash
+    const events = await api.query.system.events.at(txHash);
 
-    if (extrinsic.isSigned) {
-      console.log('Signer:', extrinsic.signer.toString());
-      console.log('Nonce:', extrinsic.nonce.toNumber());
+    // Iterate over events and print relevant details
+    events.forEach(({ event }) => {
+      const eventName = event.method;
+      const eventData = event.data.toJSON();
 
-      // Avail doesn't have an era like Polkadot. You can remove this line.
-      // console.log('Era:', extrinsic.era.toHuman());
+      console.log(`Event Name: ${eventName}`);
+      console.log(`Event Data: ${JSON.stringify(eventData)}`);
+    });
+  } catch (error) {
+    console.error("Error fetching transaction details:", error);
+  }
+}
 
-      console.log('Tip:', extrinsic.tip.toHuman()); 
-
-      // Use Avail-specific method to get call details
-      const { callIndex } = extrinsic.toHuman();
-      const { section, method } = api.registry.findMetaCall(callIndex);
-      console.log('Call Module:', section);
-      console.log('Call Method:', method);
-
-      const { args } = extrinsic.method.toJSON();
-      console.
+// Replace 'your_tx_hash_here' with the actual transaction hash
+const txHash = '0x547bc015b3a3c9bd89efe7c10bf60a6c95b4beb36d61288b383355fbdb7e4625';
+fetchTransactionDetails(txHash);

@@ -1,0 +1,14 @@
+{
+  "name": "challenge8",
+  "version": "1.0.0",
+  "main": "GasFee.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "avail-js-sdk": "^0.2.12"
+  }
+}

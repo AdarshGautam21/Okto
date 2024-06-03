@@ -1,6 +1,8 @@
 {
   "dependencies": {
     "@availproject/cli": "^0.1.12",
+    "@polkadot/api": "^11.2.1",
+    "@polkadot/keyring": "^12.6.2",
     "avail-js-sdk": "^0.2.12"
   }
 }

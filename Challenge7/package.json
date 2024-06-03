@@ -1,0 +1,16 @@
+{
+  "name": "challenge7",
+  "version": "1.0.0",
+  "main": "BlockProperties.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@polkadot/api": "^11.2.1",
+    "avail-js-sdk": "^0.2.12",
+    "dotenv": "^16.4.5"
+  }
+}

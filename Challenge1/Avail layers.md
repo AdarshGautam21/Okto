@@ -1,4 +1,3 @@
-```markdown
 # Avail Network: A Deep Dive into its Architectural Layers
 
 ## Introduction
@@ -38,4 +37,3 @@ The Fusion layer focuses on enhancing the security of the Avail network by pooli
 ## Conclusion
 
 Avail's layered architecture offers a comprehensive solution for achieving scalability, interoperability, and security in the blockchain space. The DA layer ensures efficient data availability, the Nexus layer simplifies the interaction between data and execution, and the Fusion layer strengthens the overall security of the network. By combining these layers, Avail is poised to play a pivotal role in unifying Web3 and unlocking the full potential of blockchain technology.
-```

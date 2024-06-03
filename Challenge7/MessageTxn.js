@@ -1,15 +1,12 @@
-import { ApiPromise, WsProvider } from 'avail-js-sdk';
-
+const { ApiPromise, HttpProvider } = require ('@polkadot/api');
+require ("dotenv").config();
 async function main() {
-  const wsProvider = new WsProvider("wss://ws.turing.avail.tools"); // Turing Testnet Endpoint
-  const api = await ApiPromise.create({ 
-    provider: wsProvider,
-    chainId: 22023 // This chain ID is required for Turing Testnet
-  });
+  const httpProvider = new HttpProvider(process.env.HTTP_ENDPOINT); 
+  const api = await ApiPromise.create({ provider: httpProvider, chainId: 22023 });
   
 
   // Get transaction hash from user input or command-line arguments
-  const txHash = process.argv[2] || 'YOUR_TRANSACTION_HASH'; // Replace 'YOUR_TRANSACTION_HASH' if providing via code
+  const txHash = process.argv[2] || '0x92cdb77314063a01930b093516d19a453399710cc8ae635ff5ab6cf76b26f218'; // Replace 'YOUR_TRANSACTION_HASH' if providing via code
   const blockHash = process.argv[3];
 
   try {
